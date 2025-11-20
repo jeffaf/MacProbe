@@ -14,7 +14,9 @@ void check_sip_status(void) {
   int sip_enabled = 0;
 
   /* Open the command for reading. */
-  fp = popen("csrutil status", "r");
+  // FIX: ENV33-C. Do not call system() - Use absolute path to avoid PATH
+  // hijacking
+  fp = popen("/usr/bin/csrutil status", "r");
   if (fp == NULL) {
     printf("  [-] SIP: Failed to check (popen error)\n");
     return;
@@ -41,7 +43,8 @@ void check_gatekeeper_status(void) {
   char path[1035];
   int gk_enabled = 0;
 
-  fp = popen("spctl --status", "r");
+  // FIX: ENV33-C. Do not call system() - Use absolute path
+  fp = popen("/usr/sbin/spctl --status", "r");
   if (fp == NULL) {
     printf("  [-] Gatekeeper: Failed to check\n");
     return;
