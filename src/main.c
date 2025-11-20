@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main(void) {
-  printf("MacProbe - MacOS Reconnaissance Tool\n");
+  printf("MacProbe - MacOS Security Check\n");
   printf("====================================\n\n");
 
   print_system_info();
