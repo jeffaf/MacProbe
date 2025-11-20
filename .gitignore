@@ -1,0 +1,10 @@
+# Object files
+*.o
+obj/
+
+# Binaries
+macprobe
+*.dSYM/
+
+# OS generated
+.DS_Store
