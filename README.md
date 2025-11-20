@@ -1,6 +1,6 @@
 # MacProbe
 
-**MacProbe** is a lightweight, C-based reconnaissance tool designed for macOS red teaming and security auditing. It performs rapid local environment checks to identify sandboxes, virtual machines, and the system's security posture.
+**MacProbe** is a lightweight, C-based reconnaissance tool designed for macOS  security auditing. It performs rapid local environment checks to identify sandboxes, virtual machines, and the system's security posture.
 
 ## Features
 
