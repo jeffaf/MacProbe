@@ -1,8 +1,8 @@
-# MacProbe 🕵️‍♂️💻
+# MacProbe
 
 **MacProbe** is a lightweight, C-based reconnaissance tool designed for macOS red teaming and security auditing. It performs rapid local environment checks to identify sandboxes, virtual machines, and the system's security posture.
 
-## 🚀 Features
+## Features
 
 *   **Environment Detection**:
     *   Identifies Hardware Model (e.g., `MacBookPro18,3`).
@@ -14,7 +14,7 @@
     *   Checks access to sensitive user data protected by TCC (Transparency, Consent, and Control).
     *   Probes for: Full Disk Access, Safari History, Messages/SMS, and Mail.
 
-## 🛠️ Build & Install
+## Build & Install
 
 MacProbe is written in C and requires no external dependencies other than the standard macOS SDK.
 
@@ -27,7 +27,7 @@ cd MacProbe
 make
 ```
 
-## 📖 Usage
+## Usage
 
 Simply run the binary from your terminal:
 
@@ -51,6 +51,6 @@ Environment: Physical Hardware (Likely)
     [-] No sensitive TCC data accessible (Clean/Sandboxed)
 ```
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This tool is for **educational and authorized security testing purposes only**. Use responsibly.
