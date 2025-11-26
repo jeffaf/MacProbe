@@ -11,6 +11,7 @@ int main(void) {
   check_sip_status();
   check_gatekeeper_status();
   check_tcc_permissions();
+  scan_applications_for_entitlements();
 
   return 0;
 }

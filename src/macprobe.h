@@ -11,5 +11,6 @@ bool is_virtual_machine(void);
 void check_sip_status(void);
 void check_gatekeeper_status(void);
 void check_tcc_permissions(void);
+void scan_applications_for_entitlements(void);
 
 #endif
