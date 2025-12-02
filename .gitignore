@@ -5,6 +5,7 @@ obj/
 # Binaries
 macprobe
 *.dSYM/
+*.dylib
 
 # OS generated
 .DS_Store

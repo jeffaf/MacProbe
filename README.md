@@ -13,6 +13,14 @@
 *   **Privacy (TCC) Enumeration**:
     *   Checks access to sensitive user data protected by TCC (Transparency, Consent, and Control).
     *   Probes for: Full Disk Access, Safari History, Messages/SMS, and Mail.
+*   **Entitlement Scanner**:
+    *   Scans `/Applications` for apps with risky entitlement combinations:
+        *   `com.apple.security.cs.disable-library-validation`
+        *   `com.apple.security.cs.allow-unsigned-executable-memory`
+    *   Identifies potential targets for **DYLD_INSERT_LIBRARIES** injection.
+*   **Injection Test**:
+    *   Interactive test to verify if a vulnerable app allows code injection.
+    *   Injects a benign dylib that prints a success message to stdout and syslog.
 
 ## Build & Install
 
@@ -49,6 +57,17 @@ Environment: Physical Hardware (Likely)
   [+] Gatekeeper: Enabled
   [?] Checking TCC (Privacy) Permissions for current context:
     [-] No sensitive TCC data accessible (Clean/Sandboxed)
+
+[+] Entitlement Scanner (DYLD Injection Candidates):
+    Scanning /Applications for risky entitlements...
+    [!] VULNERABLE: /Applications/VulnerableApp.app
+        -> Has 'disable-library-validation' AND 'allow-unsigned-executable-memory'
+        -> Potential DYLD_INSERT_LIBRARIES injection target!
+        [?] Test injection on this app? (y/n): y
+        [*] Attempting injection...
+        [*] Running in background: DYLD_INSERT_LIBRARIES=.../inject.dylib ... &
+        [*] Check stdout/syslog for 'Hello from dylib!'
+    [=] Scan complete.
 ```
 
 ## Disclaimer
